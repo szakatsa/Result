@@ -1,0 +1,1 @@
+# Szakatsa.Result
