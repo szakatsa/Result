@@ -9,6 +9,17 @@
         <Authors>Alpár Szakáts</Authors>
         <Description>A Result implementation</Description>
         <PackageLicenseUrl>https://unlicense.org/</PackageLicenseUrl>
+        <RepositoryType>git</RepositoryType>
+        <AssemblyVersion>1.0</AssemblyVersion>
+        <FileVersion>1.0.0.0</FileVersion>
+        <SignAssembly>true</SignAssembly>
+        <AssemblyOriginatorKeyFile>..\..\..\Signatures\szakatsa.snk</AssemblyOriginatorKeyFile>
     </PropertyGroup>
+
+    <ItemGroup>
+      <None Include="..\..\..\Signatures\szakatsa.snk">
+        <Link>szakatsa.snk</Link>
+      </None>
+    </ItemGroup>
 
 </Project>
