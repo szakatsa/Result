@@ -1,29 +1,38 @@
 
 # Szakatsa.Result
 
-The project aims for a good implementation for the Result problem
+Szakatsa.Result is a lightweight, extensible C# library that provides a robust implementation of the Result pattern. It’s designed to encapsulate success and failure outcomes in a clean, expressive, and type-safe manner.
 
+
+
+## Features
+
+- Represent results with or without values
+- Support for strongly-typed errors
+- Multiple exceptions  per failure
+- Minimal, dependency-free API
+- Public domain licensing (Unlicense)
 
 
 ## Usage
 
-### Without value
+### Basic Result (No Value)
     using Szakatsa.Result;
 
     Result successful = Result.Success();
     Result failed = Result.Fail(new NotImplementedException());
 
-### With value
+### Result With Value
     using Szakatsa.Result;
 
     Result<string> successfulWithValue = Result.Success("This is the value of the successful attempt");
     Result<string> failedWithValue = Result.Fail(new NotSupportedException("There is no value associated when an attempt fails"));
 
 
-### With value and typed error
-    Result<string, int> failedWithTypedError = Result.Fail(32); //An error code for example
+### Result with Value and typed Error
+    Result<string, int> failedWithTypedError = Result.Fail(32); //e.g., an error code
 
-### Checking
+### Checking Result State
     using Szakatsa.Result;
 
     Result<string, int> result = Result.Fail(64);
@@ -38,9 +47,18 @@ The project aims for a good implementation for the Result problem
         Exception[] exceptions = result.Exceptions;
         Exception? combinedException = result.Exception;
     }
-The exception property will have null value if there were no exceptions registered, the single exception if only one exception was registered, and an AggregateException containing all other exceptions if there were multiple exceptions registered.
+
+The Exception property contains:
+- null if no exceptions were registered
+- A single exception if only one was registered
+- An AggregateException if multiple exceptions were registered
 ## License
-The library is licensed under the unlicense license:
+Szakatsa.Result is released under the Unlicense.
+
+This means:
+- ✅ You can freely use, modify, distribute, or sell the software
+- ❌ No warranties or guarantees are provided
+- 💼 Suitable for both personal and commercial use
 
 This is free and unencumbered software released into the public domain.
 
