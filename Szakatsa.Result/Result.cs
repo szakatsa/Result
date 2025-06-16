@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Szakatsa.Result
+namespace SzakatsA.Result
 {
     public partial class Result
     {
         private readonly Exception[] _exceptions;
         
         public virtual bool IsSuccessful { get; }
-        public bool IsFailed => !IsSuccessful;
-        
+        public virtual bool IsFailed => !IsSuccessful;
+
         public Result(bool isSuccessful, params Exception[] exceptions)
         {
             IsSuccessful = isSuccessful;
@@ -17,7 +17,6 @@ namespace Szakatsa.Result
         }
         
         public Exception[] Exceptions => this._exceptions;
-
         public Exception? Exception => this._exceptions.Length switch
         {
             0 => null,
@@ -48,6 +47,10 @@ namespace Szakatsa.Result
         [MemberNotNullWhen(false, nameof(Error))]
         #endif
         public override bool IsSuccessful => base.IsSuccessful;
+        #if !NETSTANDARD2_0 && !NETSTANDARD2_1
+        [MemberNotNullWhen(true, nameof(Error))]
+        #endif
+        public override bool IsFailed => !IsSuccessful;
         public TError? Error { get; }
 
         public Result(TValue value) : base(value) {}

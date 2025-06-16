@@ -1,4 +1,4 @@
-namespace Szakatsa.Result
+namespace SzakatsA.Result
 {
     public class SuccessfulResult {}
 

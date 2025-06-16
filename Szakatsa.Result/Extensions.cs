@@ -1,6 +1,6 @@
 using System;
 
-namespace Szakatsa.Result
+namespace SzakatsA.Result
 {
     public static class Extensions
     {
@@ -35,5 +35,10 @@ namespace Szakatsa.Result
             else
                 return new Result<T2>(result.Exceptions);
         }
+
+        public static SuccessfulResult ToSuccessfulResult(this Result result) => result.IsSuccessful ? new SuccessfulResult() : throw new InvalidCastException("Cannot cast failed result to SuccessfulResult");
+        public static SuccessfulResult<TValue> ToSuccessfulResult<TValue>(this Result<TValue> result) => result.IsSuccessful ? new SuccessfulResult<TValue>(result.Value) : throw new InvalidCastException("Cannot cast failed result to SuccessfulResult");
+        public static FailedResult ToFailedResult(this Result result) => !result.IsSuccessful ? new FailedResult(result.Exceptions) : throw new InvalidCastException("Cannot cast successful result to FailedResult");
+        public static FailedResult<TError> ToFailedResult<TValue, TError>(this Result<TValue, TError> result) => !result.IsSuccessful ? new FailedResult<TError>(result.Error, result.Exceptions) : throw new InvalidCastException("Cannot cast successful result to FailedResult");
     }
 }

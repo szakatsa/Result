@@ -1,6 +1,6 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Szakatsa.Result", "Szakatsa.Result\Szakatsa.Result.csproj", "{F6B93927-9DA0-43BF-8DF4-37E8270387A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SzakatsA.Result", "SzakatsA.Result\SzakatsA.Result.csproj", "{F6B93927-9DA0-43BF-8DF4-37E8270387A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

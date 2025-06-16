@@ -1,6 +1,6 @@
 using System;
 
-namespace Szakatsa.Result
+namespace SzakatsA.Result
 {
     public class FailedResult
     {

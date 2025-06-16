@@ -1,7 +1,7 @@
 
-# Szakatsa.Result
+# SzakatsA.Result
 
-Szakatsa.Result is a lightweight, extensible C# library that provides a robust implementation of the Result pattern. It’s designed to encapsulate success and failure outcomes in a clean, expressive, and type-safe manner.
+SzakatsA.Result is a lightweight, extensible C# library that provides a robust implementation of the Result pattern. It’s designed to encapsulate success and failure outcomes in a clean, expressive, and type-safe manner.
 
 
 
@@ -17,23 +17,25 @@ Szakatsa.Result is a lightweight, extensible C# library that provides a robust i
 ## Usage
 
 ### Basic Result (No Value)
-    using Szakatsa.Result;
+    using SzakatsA.Result;
 
     Result successful = Result.Success();
     Result failed = Result.Fail(new NotImplementedException());
 
 ### Result With Value
-    using Szakatsa.Result;
+    using SzakatsA.Result;
 
     Result<string> successfulWithValue = Result.Success("This is the value of the successful attempt");
     Result<string> failedWithValue = Result.Fail(new NotSupportedException("There is no value associated when an attempt fails"));
 
 
 ### Result with Value and typed Error
+    using SzakatsA.Result;
+
     Result<string, int> failedWithTypedError = Result.Fail(32); //e.g., an error code
 
 ### Checking Result State
-    using Szakatsa.Result;
+    using SzakatsA.Result;
 
     Result<string, int> result = Result.Fail(64);
 
@@ -53,7 +55,7 @@ The Exception property contains:
 - A single exception if only one was registered
 - An AggregateException if multiple exceptions were registered
 ## License
-Szakatsa.Result is released under the Unlicense.
+SzakatsA.Result is released under the Unlicense.
 
 This means:
 - ✅ You can freely use, modify, distribute, or sell the software
