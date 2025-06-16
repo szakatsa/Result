@@ -8,7 +8,8 @@
         <Title>SzakatsA.Result</Title>
         <Authors>Alpár Szakáts</Authors>
         <Description>A Result implementation</Description>
-        <PackageLicenseUrl></PackageLicenseUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
         <RepositoryType>git</RepositoryType>
         <AssemblyVersion>1.1</AssemblyVersion>
         <FileVersion>1.1.0.0</FileVersion>
@@ -23,6 +24,12 @@
       <None Include="..\..\..\Signatures\szakatsa.snk">
         <Link>szakatsa.snk</Link>
       </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\README.md" pack="true" PackagePath=".">
+        <Link>README.md</Link>
+      </Content>
     </ItemGroup>
 
 </Project>
